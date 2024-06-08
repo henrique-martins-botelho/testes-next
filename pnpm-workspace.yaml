@@ -1,0 +1,6 @@
+packages:
+    - 'checkout'
+    - 'home'
+    - 'shared'
+    - 'shop'
+    - 'nuxt3'
