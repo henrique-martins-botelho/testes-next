@@ -1,5 +1,3 @@
 packages:
-    - 'checkout'
-    - 'home'
-    - 'shared'
-    - 'shop'
+    - "apps/*"
+    - "packages/*"
