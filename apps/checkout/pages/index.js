@@ -1,6 +1,7 @@
-import React, { useEffect, useState, Suspense } from 'react';
-import { useRouter } from 'next/router';
-const Home = typeof window !== 'undefined' ? React.lazy(() => import('home/home')) : null
+import React, { useEffect, useState, Suspense } from "react";
+import { useRouter } from "next/router";
+const Home =
+  typeof window !== "undefined" ? React.lazy(() => import("home/home")) : null;
 const Page = (props) => {
   const [isClient, setIsClient] = useState(false);
   const router = useRouter();
@@ -14,15 +15,18 @@ const Page = (props) => {
     return null;
   }
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Home {...props} />
-    </Suspense>
+    <div>
+      <h1>Página do Checkout</h1>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Home {...props} />
+      </Suspense>
+    </div>
   );
 };
-Page.getInitialProps = async ctx => {
-  if (typeof window !== 'undefined') {
-    const page = (await import('home/home')).default;
-    console.log('Running getInitialProps client side');
+Page.getInitialProps = async (ctx) => {
+  if (typeof window !== "undefined") {
+    const page = (await import("home/home")).default;
+    console.log("Running getInitialProps client side");
     if (page.getInitialProps) {
       return page.getInitialProps(ctx);
     }

@@ -1,8 +1,5 @@
-import App from 'next/app';
-import React, { useState, useEffect, Suspense, lazy } from 'react';
-
-// Lazy-load the Nav component. This will not be executed server-side.
-const Nav = typeof window !== 'undefined' ? lazy(() => import('home/nav')) : null;
+import App from "next/app";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 
 function MyApp({ Component, pageProps }) {
   const [isClient, setIsClient] = useState(false);
@@ -14,11 +11,6 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      {isClient && (
-        <Suspense fallback={<div>Loading navigation...</div>}>
-          <Nav />
-        </Suspense>
-      )}
       <Component {...pageProps} />
     </>
   );

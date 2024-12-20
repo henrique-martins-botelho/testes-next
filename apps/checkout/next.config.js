@@ -1,4 +1,4 @@
-const NextFederationPlugin = require('@module-federation/nextjs-mf');
+const NextFederationPlugin = require("@module-federation/nextjs-mf");
 
 module.exports = {
   webpack(config, options) {
@@ -6,20 +6,19 @@ module.exports = {
     if (!options.isServer) {
       config.plugins.push(
         new NextFederationPlugin({
-          name: 'checkout',
+          name: "checkout",
           remotes: {
-            home: `home@http://localhost:3001/_next/static/chunks/remoteEntry.js`,
-            shop: 'shop@http://localhost:3002/_next/static/chunks/remoteEntry.js',
+            home: `home@http://localhost:3003/_next/static/chunks/remoteEntry.js`,
           },
-          filename: 'static/chunks/remoteEntry.js',
+          filename: "static/chunks/remoteEntry.js",
           exposes: {
-            './title': './components/exposedTitle.js',
-            './checkout': './pages/checkout',
-            './pages-map': './pages-map.js',
+            "./title": "./components/exposedTitle.js",
+            "./checkout": "./pages/checkout",
+            "./pages-map": "./pages-map.js",
           },
           shared: {},
           extraOptions: {},
-        }),
+        })
       );
     }
 

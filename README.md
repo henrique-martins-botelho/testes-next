@@ -7,14 +7,14 @@ NOTE: There seems to be a problem with css-in-js sharing between federated modul
 ## Getting Started
 
 1. run `npm install @module-federation/nextjs-mf` with npm 7 (yarn probably better) or install it directly in each folder/app
-2. run `pnpm run start` and browse to `http://localhost:3001`
+2. run `pnpm run start` and browse to `http://localhost:3003`
 
 ## Context
 
 We have three next.js applications
 
 - `checkout` - port 3000
-- `home` - port 3001
+- `home` - port 3003
 - `shop` - port 3002
 
 The applications utilize omnidirectional routing and pages or components are able to be federated between applications like a SPA

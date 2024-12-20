@@ -2,8 +2,8 @@
   "name": "checkout-v14",
   "version": "0.1.0",
   "scripts": {
-    "dev": "set NEXT_PRIVATE_LOCAL_WEBPACK=true && next dev",
-    "build": "set NEXT_PRIVATE_LOCAL_WEBPACK=true && next build",
+    "dev": "set NEXT_PRIVATE_LOCAL_WEBPACK=true && next dev -p 3000",
+    "build": "set NEXT_PRIVATE_LOCAL_WEBPACK=true && next build -p 3000",
     "start": "next start"
   },
   "dependencies": {
